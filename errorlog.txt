@@ -1,0 +1,204 @@
+
+
+
+20.06.2020 08:52:44
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+20.06.2020 10:14:08
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+20.06.2020 10:16:11
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+20.06.2020 14:25:29
+SQL Error;
+INSERT INTO posts (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+20.06.2020 14:43:44
+SQL Error;
+INSERT INTO posts (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+20.06.2020 19:19:27
+SQL Error;
+INSERT INTO "posts" (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42000
+1064
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"posts" (datetime, title, catecory, author, image, post)
+                       ' at line 1
+
+
+20.06.2020 19:20:37
+SQL Error;
+INSERT INTO "posts" (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42000
+1064
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"posts" (datetime, title, catecory, author, image, post)
+                       ' at line 1
+
+
+20.06.2020 19:21:37
+SQL Error;
+INSERT INTO "posts" (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42000
+1064
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"posts" (datetime, title, catecory, author, image, post)
+                       ' at line 1
+
+
+20.06.2020 19:27:17
+SQL Error;
+INSERT INTO "posts" (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42000
+1064
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"posts" (datetime, title, catecory, author, image, post)
+                       ' at line 1
+
+
+20.06.2020 19:29:33
+SQL Error;
+INSERT INTO "posts" (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42000
+1064
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"posts" (datetime, title, catecory, author, image, post)
+                       ' at line 1
+
+
+21.06.2020 08:10:08
+SQL Error;
+INSERT INTO posts(datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+21.06.2020 08:13:52
+SQL Error;
+INSERT INTO posts (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+21.06.2020 08:17:03
+SQL Error;
+INSERT INTO posts (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+21.06.2020 08:55:12
+SQL Error;
+INSERT INTO posts (datetime, title, catecory, author, image, post)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+24.06.2020 07:14:16
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+24.06.2020 07:15:02
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+25.06.2020 08:26:39
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+10.07.2020 12:12:25
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+10.07.2020 12:19:38
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `catecory`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+42S22
+1054
+Unknown column 'catecory' in 'field list'
+
+
+11.07.2020 08:43:54
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `category`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+HY000
+1364
+Field 'id' doesn't have a default value
+
+
+11.07.2020 08:45:23
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `category`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :categoryName, :adminName, :imageName, :postDescription)
+HY000
+1364
+Field 'id' doesn't have a default value
+
+
+11.07.2020 08:47:34
+SQL Error;
+INSERT INTO posts (`datetime`, `title`, `category`, `author`, `image`, `post`)
+                         VALUES (:dateTime, :postTitle, :category, :adminName, :imageName, :postDescription)
+HY000
+1364
+Field 'id' doesn't have a default value

@@ -1,0 +1,23 @@
+@import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "./../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import "./../../node_modules/@fortawesome/fontawesome-free/css/brands.min.css";
+@import "./../../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css";
+@import "./../../node_modules/@fortawesome/fontawesome-free/css/regular.min.css";
+@import "./../../node_modules/@fortawesome/fontawesome-free/css/solid.min.css";
+@import "./../../node_modules/@fortawesome/fontawesome-free/css/svg-with-js.min.css";
+@import "./../../node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css";
+
+p {
+  color: red;
+}
+
+.FieldInfo {
+  color: rgb(251, 174, 44);
+  font-family: Bitter,Georgia, "Times New Roman", Times,serif;
+  font-size: 1.2em;
+}
+
+.commentBlock {
+  background-color: lightgray;
+}
+
