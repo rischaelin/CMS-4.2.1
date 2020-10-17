@@ -14,13 +14,14 @@ if (isset($_POST['Submit'])) {
         redirectTo ('login.php');
     } else {
         // code for checking username and password from Database
-        $found_Account = login_Attempt($userName, $password);
-        if ($found_Account) {
-            $_SESSION["userId"] = $found_Account->id;
-            $_SESSION["userName"] = $found_Account->username;
-            $_SESSION["adminName"] = $found_Account->aname;
+        $user = login_Attempt($userName);
+
+        if ( password_verify( $password, $user->password )) {
+            $_SESSION["userId"] = $user->id;
+            $_SESSION["userName"] = $user->username;
+            $_SESSION["adminName"] = $user->aname;
             $_SESSION["SuccessMessage"] = 'Welcome ' . $_SESSION['adminName'];
-            redirectTo ('login.php');
+            redirectTo ('AddNewPost.php');
         } else {
             $_SESSION['ErrorMessage'] = 'Incorrect Username/Password';
             redirectTo ('login.php');

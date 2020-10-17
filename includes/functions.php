@@ -36,17 +36,16 @@ function checkUserName($userName)
  * @param $password
  * @return null
  */
-function login_Attempt($userName, $password)
+function login_Attempt($userName)
 {
     global $pdoObject;
-    $sql = "SELECT * FROM admins WHERE username=:userName AND password=:passWord LIMIT 1";
+    $sql = "SELECT * FROM admins WHERE username=:userName LIMIT 1";
     $stmt = $pdoObject->prepare($sql);
     $stmt->bindValue(':userName', $userName);
-    $stmt->bindValue(':passWord', $password);
     $stmt->execute();
     $result = $stmt->rowcount();
     if ($result == 1) {
-        return $found_Account = $stmt->fetch();
+        return $user = $stmt->fetch();
     } else {
         return null;
     }
