@@ -21,7 +21,7 @@ if (isset($_POST['Submit'])) {
             $_SESSION["userName"] = $user->username;
             $_SESSION["adminName"] = $user->aname;
             $_SESSION["SuccessMessage"] = 'Welcome ' . $_SESSION['adminName'];
-            redirectTo ('AddNewPost.php');
+            redirectTo ('dashboard.php');
         } else {
             $_SESSION['ErrorMessage'] = 'Incorrect Username/Password';
             redirectTo ('login.php');

@@ -37,16 +37,24 @@ function checkUserName($userName)
  * @return null
  */
 function login_Attempt($userName)
-{
-    global $pdoObject;
-    $sql = "SELECT * FROM admins WHERE username=:userName LIMIT 1";
-    $stmt = $pdoObject->prepare($sql);
-    $stmt->bindValue(':userName', $userName);
-    $stmt->execute();
-    $result = $stmt->rowcount();
-    if ($result == 1) {
-        return $user = $stmt->fetch();
-    } else {
-        return null;
+    {
+        global $pdoObject;
+        $sql = "SELECT * FROM admins WHERE username=:userName LIMIT 1";
+        $stmt = $pdoObject->prepare($sql);
+        $stmt->bindValue(':userName', $userName);
+        $stmt->execute();
+        $result = $stmt->rowcount();
+        if ($result == 1) {
+            return $user = $stmt->fetch();
+        } else {
+            return null;
+        }
     }
-}
+    function confirm_Login(){
+    if (isset($_SESSION['userId'])) {
+        return true;
+    } else {
+        $_SESSION['ErrorMessage']='Login Required!';
+        redirectTo ('login.php');
+    }
+    }

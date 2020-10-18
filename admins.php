@@ -3,6 +3,7 @@ require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/functions.php');
 require_once(__DIR__ . '/includes/sessions.php');
 require_once(__DIR__ . '/includes/dataTime.php');
+confirm_Login ();
 error_reporting(E_ALL | E_STRICT);
 ini_set("display_errors", 1);
 
