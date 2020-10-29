@@ -3,6 +3,7 @@ require_once(__DIR__ . '/includes/db.php');
 require_once(__DIR__ . '/includes/functions.php');
 require_once(__DIR__ . '/includes/sessions.php');
 require_once(__DIR__ . '/includes/dataTime.php');
+$_SESSION['TrackingURL']=$_SERVER['PHP_SELF'];
 confirm_Login ();
 error_reporting(E_ALL | E_STRICT);
 ini_set("display_errors", 1);
@@ -150,17 +151,13 @@ elseif (strlen($postText) > 9999) {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </form>
         </div>
     </div>
 </section>
 
-
-<! --
-Footer
--->
+<! -- Footer -->
 <footer class="bg-dark text-white">
     <div class="container">
         <div class="row">
@@ -169,7 +166,6 @@ Footer
                 <p class="text-center small"><a style="color: white; text-decoration: none; cursor: pointer;" href="https://jazebakram.com">This site is only used for Study prupse jazebakram.com have all the tights. no one is allow to distribute copies other then
                         <br>&trade;jazebakram.com&trade;Udemy ;&trade;Skillshare ;&trade;StackSkills</a>
                 </p>
-
             </div>
         </div>
     </div>
@@ -179,10 +175,7 @@ Footer
 </footer>
 <div style="height: 10px; background: #27aae1;"></div>
 
-<! --
-Footer
-End
--->
+<! -- Footer End -->
 <script src="./dist/js/jquery.min.js"></script>
 <script src="./dist/js/global.min.js"></script>
 </body>

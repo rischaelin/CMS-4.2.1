@@ -156,17 +156,13 @@ if
                             </div>
                         </div>
                     </div>
-
                 </div>
             </form>
         </div>
     </div>
 </section>
 
-
-<! --
-Footer
--->
+<! -- Footer -->
 <footer class="bg-dark text-white">
     <div class="container">
         <div class="row">
@@ -185,10 +181,7 @@ Footer
 </footer>
 <div style="height: 10px; background: #27aae1;"></div>
 
-<! --
-Footer
-End
--->
+<! -- Footer End -->
 <script src="./dist/js/jquery.min.js"></script>
 <script src="./dist/js/global.min.js"></script>
 </body>

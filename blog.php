@@ -13,7 +13,6 @@ require_once(__DIR__ . '/includes/dataTime.php');
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link rel="stylesheet" href="./dist/css/main.css">
-
         <title>Blog Page</title>
     </head>
     <body>
@@ -115,17 +114,14 @@ require_once(__DIR__ . '/includes/dataTime.php');
                </div>
                <?php  } ?>
            </div>
-
            <! -- Main Area End -->
 
            <! -- Side Area Start -->
             <div class="col-sm-4" style="min-height: 40px; background: green;">
-
             </div>
 
            <! -- Side Area End -->
        </div>
-
    </div>
     <! --  Header End -->
     <br>
@@ -146,12 +142,8 @@ require_once(__DIR__ . '/includes/dataTime.php');
     <div style="height: 10px; background: #27aae1;"></div>
 
     <! -- Footer End -->
-
         <div class="container">
-
-
             <p>Richi <i class="fab fa-apple"></i></p>
-
         </div>
     <script src="./dist/js/jquery.min.js"></script>
     <script src="./dist/js/global.min.js"></script>

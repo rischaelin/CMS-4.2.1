@@ -115,7 +115,6 @@ if (isset($_POST["submit"])){
                             </div>
                         </div>
                     </div>
-
                 </div>
             </form>
         </div>
@@ -123,9 +122,7 @@ if (isset($_POST["submit"])){
 </section>
 
 
-<! --
-Footer
--->
+<! -- Footer -->
 <footer class="bg-dark text-white">
     <div class="container">
         <div class="row">
@@ -134,7 +131,6 @@ Footer
                 <p class="text-center small"><a style="color: white; text-decoration: none; cursor: pointer;" href="https://jazebakram.com">This site is only used for Study prupse jazebakram.com have all the tights. no one is allow to distribute copies other then
                         <br>&trade;jazebakram.com&trade;Udemy ;&trade;Skillshare ;&trade;StackSkills</a>
                 </p>
-
             </div>
         </div>
     </div>
@@ -144,10 +140,7 @@ Footer
 </footer>
 <div style="height: 10px; background: #27aae1;"></div>
 
-<! --
-Footer
-End
--->
+<! -- Footer End -->
 <script src="./dist/js/jquery.min.js"></script>
 <script src="./dist/js/global.min.js"></script>
 </body>
