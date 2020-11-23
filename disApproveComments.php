@@ -7,9 +7,9 @@ if
 (isset($_GET['id'])){
     $searchQueryParameter = $_GET['id'];
     $admin = $_SESSION['adminName'];
-    $stmt = $pdoObject->query ("UPDATE comments SET status='ON', approvedby='$admin' WHERE ID='$searchQueryParameter'");
+    $stmt = $pdoObject->query ("UPDATE comments SET status='OFF', approvedby='$admin' WHERE ID='$searchQueryParameter'");
     if ($stmt) {
-        $_SESSION['SuccessMessage']='Comment Approved Successfully! ';
+        $_SESSION['SuccessMessage']='Comment Dis-Approved Successfully! ';
         redirectTo ('comments.php');
     }else {
         $_SESSION['ErrorMessage']='Somthing went wrong. Try again! ';

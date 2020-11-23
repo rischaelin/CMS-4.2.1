@@ -157,6 +157,42 @@ if (isset($_POST['Submit'])) {
                     </div>
                 </div>
             </form>
+            <h2>Existing Admins</h2>
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>No. </th>
+                    <th>Date&Time</th>
+                    <th>UserName</th>
+                    <th>Admin Name</th>
+                    <th>Added by</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <?php
+                $stmt = $pdoObject->query("SELECT * FROM admins ORDER BY id desc");
+                $SrNo = 0;
+                while ($dataRows = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $adminId = $dataRows['id'];
+                    $adminDate = $dataRows['datetime'];
+                    $adminUserName = $dataRows['username'];
+                    $adminName = $dataRows['aname'];
+                    $addedBy = $dataRows['addedby'];
+                    $SrNo++;
+                    //if (strlen ($commenterName)>10) { $commenterName = substr ($commenterName,0,10).'..';}
+                    ?>
+                    <tbody>
+                    <tr>
+                        <td><?php echo htmlentities ($SrNo); ?></td>
+                        <td><?php echo htmlentities ($adminDate); ?></td>
+                        <td><?php echo htmlentities ($adminUserName); ?></td>
+                        <td><?php echo htmlentities ($adminName); ?></td>
+                        <td><?php echo htmlentities ($addedBy); ?></td>
+                        <td><a href="deleteAdmin.php?id=<?php echo $adminId;?>" class="btn btn-danger">Delete</a> </td>
+                    </tr>
+                    </tbody>
+                <?php } ?>
+            </table>
         </div>
     </div>
 </section>

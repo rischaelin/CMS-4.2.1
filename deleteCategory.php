@@ -6,14 +6,13 @@ require_once (__DIR__ . '/includes/dataTime.php');
 if
 (isset($_GET['id'])){
     $searchQueryParameter = $_GET['id'];
-    $admin = $_SESSION['adminName'];
-    $stmt = $pdoObject->query ("UPDATE comments SET status='ON', approvedby='$admin' WHERE ID='$searchQueryParameter'");
+    $stmt = $pdoObject->query ("DELETE FROM category WHERE ID='$searchQueryParameter'");
     if ($stmt) {
-        $_SESSION['SuccessMessage']='Comment Approved Successfully! ';
-        redirectTo ('comments.php');
+        $_SESSION['SuccessMessage']='Category DELETED Successfully! ';
+        redirectTo ('Categories.php');
     }else {
         $_SESSION['ErrorMessage']='Somthing went wrong. Try again! ';
-        redirectTo ('comments.php');
+        redirectTo ('Categories.php');
     }
 }
 

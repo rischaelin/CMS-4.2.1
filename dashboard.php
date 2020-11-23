@@ -36,7 +36,7 @@ confirm_Login ();
                             <a href="dashboard.php" class="nav-link">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a href="AddNewPost.php"  class="nav-link">Posts</a>
+                            <a href="Post.php"  class="nav-link">Posts</a>
                         </li>
                         <li class="nav-item">
                             <a href="Categories.php" class="nav-link">Categories</a>
@@ -65,7 +65,7 @@ confirm_Login ();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1><i class="fas fa-blog" style="color: #27aae1"></i> Blog Posts</h1>
+                    <h1><i class="fas fa-blog" style="color: #27aae1"></i> Dashboard</h1>
                 </div>
                 <div class="col-lg-3 mb-2">
                     <a href="AddNewPost.php" class="btn btn-primary btn-block">
@@ -91,82 +91,101 @@ confirm_Login ();
         </div>
     </header>
     <! -- End -->
-
-    <! -- Main Area -->
     <section class="container py-2 md-4">
         <div class="row">
-            <div class="col-lg-12">
-                <?php
-                echo errorMessage();
-                echo successMessage();
-                ?>
+            <?php
+            echo errorMessage();
+            echo successMessage();
+            ?>
+            <! -- left Side Area Start -->
+            <div class="col-lg-2 d-none d-md-block">
+                <div class="card text-center bg-dark text-white mb-3">
+                    <div class="card-body">
+                        <h1 class="lead">Post</h1>
+                        <h4 class="display-5">
+                            <i class="fab fa-readme"></i>
+                            <?php
+                            totalPosts ();
+                            ?>
+                        </h4>
+                    </div>
+                </div>
+                <div class="card text-center bg-dark text-white mb-3">
+                    <div class="card-body">
+                        <h1 class="lead">Categories</h1>
+                        <h4 class="display-5">
+                            <i class="fas fa-folder"></i>
+                            <?php
+                            totalCategories();
+                            ?>
+                        </h4>
+                    </div>
+                </div>
+                <div class="card text-center bg-dark text-white mb-3">
+                    <div class="card-body">
+                        <h1 class="lead">Admins</h1>
+                        <h4 class="display-5">
+                            <i class="fas fa-users"></i>
+                            <?php
+                            totalAdmins();
+                            ?>
+                        </h4>
+                    </div>
+                </div>
+                <div class="card text-center bg-dark text-white mb-3">
+                    <div class="card-body">
+                        <h1 class="lead">Comments</h1>
+                        <h4 class="display-5">
+                            <i class="fas fa-comments"></i>
+                            <?php
+                            totalComments();
+                            ?>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <! -- left Side Area End -->
+            <! -- right Side Area Start -->
+            <div class="col-lg-10">
+                <h1>Top Posts</h1>
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th>#</th>
+                            <th>No.</th>
                             <th>Title</th>
-                            <th>Category</th>
                             <th>Date&Time</th>
                             <th>Author</th>
-                            <th>Banner</th>
                             <th>Comments</th>
-                            <th>Action</th>
-                            <th>Live Preview</th>
+                            <th>Details</th>
                         </tr>
                     </thead>
                     <?php
-                    // Fetching all the categories from posts table
-                    $stmt = $pdoObject->query("SELECT * FROM posts");
-                    $sr = 0;
+                    $srNo = 0;
+                    $stmt = $pdoObject->query("SELECT * FROM posts ORDER BY id desc LIMIT 0,5");
                     while ($dataRows = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        $idPost = $dataRows["id"];
-                        $dateTime = $dataRows["datetime"];
-                        $postTitle = $dataRows["title"];
-                        $categoryName = $dataRows["category"];
-                        $admin = $dataRows["author"];
-                        $image = $dataRows["image"];
-                        $postText = $dataRows["post"];
-                        $sr++;
-
+                        $postId = $dataRows['id'];
+                        $dateTime = $dataRows['datetime'];
+                        $author = $dataRows['author'];
+                        $title = $dataRows['title'];
+                        $srNo++;
                     ?>
-                        <tbody>
-                            <tr>
-                                <td><?php echo $sr ?></td>
-                                <td>
-                                    <?php
-                                        if (strlen($postTitle)>20){$postTitle = substr($postTitle,0,12).'..';}
-                                        echo $postTitle
-                                    ?></td>
-                                <td>
-                                    <?php
-                                        if (strlen($categoryName)>8){$categoryName = substr($categoryName,0,8).'..';}
-                                        echo $categoryName
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                        if (strlen($dateTime)>11){$dateTime = substr($dateTime,0,11).'..';}
-                                        echo $dateTime
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                        if (strlen($admin)>6){$admin = substr($admin,0,6).'..';}
-                                        echo $admin
-                                    ?>
-                                </td>
-                                <td><img src="uploads/<?php echo $image ?>" width="150px;" </td>
-                                <td>
-                                    <?php $toTal = approveComAccToPost($idPost);
+                    <tbody>
+                        <tr>
+                            <td><?php echo $srNo; ?></td>
+                            <td><?php echo $title; ?></td>
+                            <td><?php echo $dateTime; ?></td>
+                            <td><?php echo $author; ?></td>
+                            <td>
+                                    <?php $toTal = approveComAccToPost($postId);
                                     if ($toTal>0) {
-                                        ?>
-                                        <span class="badge badge-success">
+                                    ?>
+                                    <span class="badge badge-success">
                                         <?php
                                         echo $toTal; ?>
                                         </span>
-                                    <?php }
+                                       <?php }
                                     ?>
-                                    <?php $total = disApproveComAccToPost($idPost);
+                                    <?php $total = disApproveComAccToPost($postId);
                                     if ($total>0) {
                                         ?>
                                         <span class="badge badge-danger">
@@ -174,24 +193,21 @@ confirm_Login ();
                                         echo $total; ?>
                                         </span>
                                     <?php }
-                                    ?>
-                                </td>
-                                <td>
-                                    <a href="editPost.php?id=<?php echo $idPost; ?>"><span class="btn btn-warning">Edit</span> </a>
-                                    <a href="deletePost.php?id=<?php echo $idPost; ?>"><span class="btn btn-danger">Delete</span> </a>
-                                </td>
-                                <td><a href="fullPost.php?id=<?php echo $idPost; ?>" target="_blank"><span class="btn btn-primary">Live Preview</span> </a></td>
-                            </tr>
-                        </tbody>
-                    <?php
-                    }
-                    ?>
+                                ?>
+                            </td>
+                            <td>
+                                <a target="_blank" href="fullPost.php?id=<?php echo $postId; ?>">
+                                    <span class="btn btn-info">Preview</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php } ?>
                 </table>
             </div>
         </div>
     </section>
-    <! -- End Main Area -->
-
+    <! -- right Side Area End -->
     <! -- Footer -->
     <footer class="bg-dark text-white">
         <div class="container">

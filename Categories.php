@@ -68,10 +68,10 @@ if (isset($_POST['Submit'])) {
         <div class="collaps navbar-collapse" id="navbarcollapseCMS">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i>My Profile</a>
+                    <a href="myProfile.php" class="nav-link"><i class="fas fa-user text-success"></i>My Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Dashboard.php" class="nav-link">Dashboard</a>
+                    <a href="dashboard.php" class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="AddNewPost.php" class="nav-link">Posts</a>
@@ -80,18 +80,18 @@ if (isset($_POST['Submit'])) {
                     <a href="Categories.php" class="nav-link">Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link">Manage Admins</a>
+                    <a href="admins.php" class="nav-link">Manage Admins</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Comments.php" class="nav-link">Comments</a>
+                    <a href="comments.php" class="nav-link">Comments</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Blog.php?page1" class="nav-link">Live Blog</a>
+                    <a href="blog.php?page1" class="nav-link">Live Blog</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="Logout.php" class="nav-link text-danger"><i class="fas fa-user-times"></i>Logout</a>
+                    <a href="logout.php" class="nav-link text-danger"><i class="fas fa-user-times"></i>Logout</a>
                 </li>
             </ul>
         </div>
@@ -130,7 +130,7 @@ if (isset($_POST['Submit'])) {
                         </div>
                         <div class="row">
                             <div class="col-lg-6 mb-2">
-                                <a href="Dashboard.php" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i>Back To Dashboard</a>
+                                <a href="dashboard.php" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i>Back To Dashboard</a>
                             </div>
                             <div class="col-lg-6 mb-2">
                                 <button type="submit" name="Submit" class="btn btn-success btn-block"><i class="fas fa-check"></i>Publish
@@ -138,9 +138,41 @@ if (isset($_POST['Submit'])) {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </form>
+            <h2>Existing Categories</h2>
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>No. </th>
+                    <th>Date&Time</th>
+                    <th>Catergory Name</th>
+                    <th>Creator Name</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <?php
+                $stmt = $pdoObject->query("SELECT * FROM category ORDER BY id desc");
+                $SrNo = 0;
+                while ($dataRows = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $categoryId = $dataRows['id'];
+                    $categoryDate = $dataRows['datetime'];
+                    $categoryName = $dataRows['title'];
+                    $creatorName = $dataRows['author'];
+                    $SrNo++;
+                    //if (strlen ($commenterName)>10) { $commenterName = substr ($commenterName,0,10).'..';}
+                    ?>
+                    <tbody>
+                    <tr>
+                        <td><?php echo htmlentities ($SrNo); ?></td>
+                        <td><?php echo htmlentities ($categoryDate); ?></td>
+                        <td><?php echo htmlentities ($categoryName); ?></td>
+                        <td><?php echo htmlentities ($creatorName); ?></td>
+                       <td><a href="deleteCategory.php?id=<?php echo $categoryId;?>" class="btn btn-danger">Delete</a> </td>
+                  </tr>
+                    </tbody>
+                <?php } ?>
+            </table>
         </div>
     </div>
 </section>

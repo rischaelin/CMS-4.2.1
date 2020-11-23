@@ -133,8 +133,7 @@ if (isset($_POST['Submit'])) {
                    <img src="uploads/<?php echo htmlentities($image); ?>"  class="img-fluid card-img-top"/>
                    <div class="card-body">
                        <h4 class="card-title"> <?php echo htmlentities($postTitle); ?></h4>
-                       <small class="text-muted">Written by <?php echo htmlentities($admin); ?> on <?php echo htmlentities($dateTime); ?></small>
-                       <span style="float: right;" class="badge badge-dark text-light">Comments 20</span>
+                       <small class="text-muted">Category: <span class="text-dark" ><?php echo htmlentities ($categoryName); ?> </span> & Written by <span class="text-dark"> <?php echo htmlentities($admin); ?> </span> on <span class="text-dark"> <?php echo htmlentities($dateTime); ?></span></small>
                        <hr>
                        <p class="card-text">
                            <?php echo htmlentities($postText); ?>

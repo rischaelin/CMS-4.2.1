@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/includes/db.php');
+require_once(__DIR__. '/includes/db.php');
 require_once(__DIR__ . '/includes/functions.php');
 require_once(__DIR__ . '/includes/sessions.php');
 require_once(__DIR__ . '/includes/dataTime.php');
@@ -46,17 +46,17 @@ if (isset($_POST["submit"])){
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarcollapseCMS"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarcollapseCMS">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i>My Profile</a></li>
-                <li class="nav-item"><a href="Dashboard.php" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="myProfile.php" class="nav-link"><i class="fas fa-user text-success"></i>My Profile</a></li>
+                <li class="nav-item"><a href="dashboard.php" class="nav-link">Dashboard</a></li>
                 <li class="nav-item"><a href="post.php" class="nav-link">Posts</a></li>
                 <li class="nav-item"><a href="Categories.php" class="nav-link">Categories</a></li>
-                <li class="nav-item"><a href="Admins.php" class="nav-link">Manage Admins</a></li>
-                <li class="nav-item"><a href="Comments.php" class="nav-link">Comments</a></li>
-                <li class="nav-item"><a href="Blog.php?page1" class="nav-link">Live Blog</a></li>
+                <li class="nav-item"><a href="admins.php" class="nav-link">Manage Admins</a></li>
+                <li class="nav-item"><a href="comments.php" class="nav-link">Comments</a></li>
+                <li class="nav-item"><a href="blog.php?page1" class="nav-link">Live Blog</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="Logout.php" class="nav-link text-danger"><i class="fas fa-user-times"></i>Logout</a>
+                    <a href="logout.php" class="nav-link text-danger"><i class="fas fa-user-times"></i>Logout</a>
                 </li>
             </ul>
         </div>
@@ -98,7 +98,7 @@ if (isset($_POST["submit"])){
                         </div>
                         <div class="form-group">
                             <span class="FieldInfo">Existing Image: </span>
-                            <img class="mb-3" src="uploads/<?php echo $imageToBeDeleted;?>" width="130px"; height="90px"; >
+                            <img class="mb-3" src="uploads/<?php echo $imageToBeDeleted;?>" width="130px" ; height="90px" ; >
                         </div>
                         <div class="form-group">
                             <label for="Post"><span class="FieldInfo"> Post: </span></label>
@@ -108,7 +108,7 @@ if (isset($_POST["submit"])){
                         </div>
                         <div class="row">
                             <div class="col-lg-6 mb-2">
-                                <a href="Dashboard.php" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i>Back To Dashboard</a>
+                                <a href="dashboard.php" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i>Back To Dashboard</a>
                             </div>
                             <div class="col-lg-6 mb-2">
                                 <button type="submit" id="submit" name="submit" class="btn btn-danger btn-block"><i class="fas fa-trash"></i>Delete

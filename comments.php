@@ -74,6 +74,10 @@ confirm_Login ();
     <section class="container py-2 mb-4">
         <div class="row" style="min-height: 30px;">
             <div class="col-lg-12" style="min-height: 400px;">
+                <?php
+                echo SuccessMessage();
+                echo ErrorMessage();
+                ?>
                 <h2>Un-Approved Comments</h2>
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
@@ -105,11 +109,49 @@ confirm_Login ();
                             <td><?php echo htmlentities ($dateTimeOffComment); ?></td>
                             <td><?php echo htmlentities ($commenterName); ?></td>
                             <td><?php echo htmlentities ($commentContent); ?></td>
-                            <td><a href="approveComment.php?id=<?php echo $commentId;?>" class="btn btn-success">Approve</a> </td>
-                            <td><a href="deleteComment.php?id=<?php echo $commentId;?>" class="btn btn-danger">Delete</a> </td>
-                            <td> <a class="btn btn-primary" href="fullPost.php?id=<?php echo $commentPostId; ?>" target="_blank">Live Preview</a> </td>
+                            <td style="min-width: 150px"><a href="approveComments.php?id=<?php echo $commentId;?>" class="btn btn-success">Approve</a> </td>
+                            <td><a href="deleteComments.php?id=<?php echo $commentId;?>" class="btn btn-danger">Delete</a> </td>
+                            <td style="min-width: 150px"> <a class="btn btn-primary" href="fullPost.php?id=<?php echo $commentPostId; ?>" target="_blank">Live Preview</a> </td>
                         </tr>
                     </tbody>
+                    <?php } ?>
+                </table>
+                <h2>Approved Comments</h2>
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>No. </th>
+                        <th>Date&Time</th>
+                        <th>Name</th>
+                        <th>Comment</th>
+                        <th>Revert</th>
+                        <th>Action</th>
+                        <th>Details</th>
+                    </tr>
+                    </thead>
+                    <?php
+                    $stmt = $pdoObject->query("SELECT * FROM comments WHERE status='ON' ORDER BY id desc");
+                    $SrNo = 0;
+                    while ($dataRows = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $commentId = $dataRows['id'];
+                        $dateTimeOffComment = $dataRows['datetime'];
+                        $commenterName = $dataRows['name'];
+                        $commentContent = $dataRows['comment'];
+                        $commentPostId = $dataRows['post_id'];
+                        $SrNo++;
+                        //if (strlen ($commenterName)>10) { $commenterName = substr ($commenterName,0,10).'..';}
+                        ?>
+                        <tbody>
+                        <tr>
+                            <td><?php echo htmlentities ($SrNo); ?></td>
+                            <td><?php echo htmlentities ($dateTimeOffComment); ?></td>
+                            <td><?php echo htmlentities ($commenterName); ?></td>
+                            <td><?php echo htmlentities ($commentContent); ?></td>
+                            <td style="min-width: 150px;"><a href="disApproveComments.php?id=<?php echo $commentId;?>" class="btn btn-warning">Dis-Approve</a> </td>
+                            <td><a href="deleteComments.php?id=<?php echo $commentId;?>" class="btn btn-danger">Delete</a> </td>
+                            <td style="min-width: 150px"> <a class="btn btn-primary" href="fullPost.php?id=<?php echo $commentPostId; ?>" target="_blank">Live Preview</a> </td>
+                        </tr>
+                        </tbody>
                     <?php } ?>
                 </table>
             </div>

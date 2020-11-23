@@ -1,4 +1,11 @@
-<?php
+<?php /** @noinspection ALL */
+/** @noinspection ALL */
+/** @noinspection ALL */
+/** @noinspection ALL */
+/** @noinspection ALL */
+/** @noinspection ALL */
+/** @noinspection ALL */
+/** @noinspection ALL */
 require_once (__DIR__ . '/db.php');
 require_once (__DIR__ . '/sessions.php');
 require_once (__DIR__ . '/dataTime.php');
@@ -57,4 +64,58 @@ function login_Attempt($userName)
         $_SESSION['ErrorMessage']='Login Required!';
         redirectTo ('login.php');
     }
+    }
+
+    function totalPosts() {
+        global $pdoObject;
+        $sql = "SELECT COUNT(*) FROM posts";
+        $stmt = $pdoObject->query($sql);
+        $totalRows = $stmt->fetch(PDO::FETCH_ASSOC);
+        $totalPosts = array_shift ($totalRows);
+        echo $totalPosts;
+    }
+
+    function totalCategories() {
+        global $pdoObject;
+        $sql = "SELECT COUNT(*) FROM category";
+        $stmt = $pdoObject->query($sql);
+        $totalRows = $stmt->fetch(PDO::FETCH_ASSOC);
+        $totalCategories = array_shift ($totalRows);
+        echo $totalCategories;
+    }
+
+    function totalAdmins() {
+        global $pdoObject;
+        $sql = "SELECT COUNT(*) FROM admins";
+        $stmt = $pdoObject->query($sql);
+        $totalRows = $stmt->fetch(PDO::FETCH_ASSOC);
+        $totalAdmins = array_shift ($totalRows);
+        echo $totalAdmins;
+    }
+
+    function totalComments() {
+        global $pdoObject;
+        $sql = "SELECT COUNT(*) FROM comments";
+        $stmt = $pdoObject->query($sql);
+        $totalRows = $stmt->fetch(PDO::FETCH_ASSOC);
+        $totalComments = array_shift ($totalRows);
+        echo $totalComments;
+    }
+
+    function approveComAccToPost($postId) {
+        global $pdoObject;
+        $sqlApprove = "SELECT COUNT(*) FROM comments WHERE post_id='$postId' AND status='ON'";
+        $stmtApproved =$pdoObject->query($sqlApprove);
+        $rowsTotal = $stmtApproved->fetch(PDO::FETCH_ASSOC);
+        $toTal = array_shift ($rowsTotal);
+        return $toTal;
+    }
+
+    function disApproveComAccToPost($postId) {
+        global $pdoObject;
+        $sqlDisApprove = "SELECT COUNT(*) FROM comments WHERE post_id='$postId' AND status='OFF'";
+        $stmtDisApproved = $pdoObject -> query ($sqlDisApprove);
+        $rowsTotal = $stmtDisApproved -> fetch (PDO::FETCH_ASSOC);
+        $total = array_shift ($rowsTotal);
+        return $total;
     }
